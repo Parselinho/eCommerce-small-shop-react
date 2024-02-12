@@ -1,4 +1,16 @@
+import Filters from "../components/products/Filters";
+import PaginationContainer from "../components/products/PaginationContainer";
+import ProductsContainer from "../components/products/ProductsContainer";
+import ProductsList from "../components/products/ProductsList";
+
 const Products = () => {
-  return <h1 className="text-4xl">Products</h1>;
+  return (
+    <>
+      <Filters />
+      <ProductsContainer />
+      <ProductsList />
+      <PaginationContainer />
+    </>
+  );
 };
 export default Products;

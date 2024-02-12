@@ -12,7 +12,14 @@ import {
   Checkout,
   Orders,
 } from "./pages";
+import { ErrorElement } from "./components";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+// loaders
+import { loader as landingLoader } from "./loaders/LandingLoader";
+import { loader as singleProductLoader } from "./loaders/SingleProductLoader";
+import { loader as productsLoader } from "./loaders/ProductsLoader";
+// actions
 
 const router = createBrowserRouter([
   {
@@ -23,6 +30,8 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Landing />,
+        errorElement: <ErrorElement />,
+        loader: landingLoader,
       },
       {
         path: "/about",
@@ -31,10 +40,12 @@ const router = createBrowserRouter([
       {
         path: "/products",
         element: <Products />,
+        loader: productsLoader,
       },
       {
         path: "/products/:id",
         element: <SingleProduct />,
+        loader: singleProductLoader,
       },
       {
         path: "/orders",

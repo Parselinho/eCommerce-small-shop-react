@@ -8,4 +8,7 @@ export default {
     extend: {},
   },
   plugins: [typography, daisyUI],
+  daisyui: {
+    themes: ["nord", "synthwave"],
+  },
 };
