@@ -1,6 +1,10 @@
 import { customFetch } from "../helpers";
+const url = "/products";
+export const loader = async ({ request }) => {
+  const params = Object.fromEntries([
+    ...new URL(request.url).searchParams.entries(),
+  ]);
 
-export const loader = async () => {
-  const response = await customFetch(`products`);
-  return { products: response.data.data, meta: response.data.meta };
+  const response = await customFetch(url, { params });
+  return { products: response.data.data, meta: response.data.meta, params };
 };

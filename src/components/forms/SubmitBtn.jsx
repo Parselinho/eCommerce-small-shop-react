@@ -3,7 +3,6 @@ import { useNavigation } from "react-router-dom";
 // eslint-disable-next-line react/prop-types
 const SubmitBtn = ({ text }) => {
   const { state } = useNavigation();
-  //   console.log(state);
   const isSubmitting = state === "submitting";
   return (
     <button
