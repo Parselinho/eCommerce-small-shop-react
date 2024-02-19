@@ -19,7 +19,12 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { loader as landingLoader } from "./loaders/LandingLoader";
 import { loader as singleProductLoader } from "./loaders/SingleProductLoader";
 import { loader as productsLoader } from "./loaders/ProductsLoader";
+
 // actions
+import { action as registerAction } from "./actions/RegisterAction";
+import { action as loginAction } from "./actions/LoginAction";
+
+import { store } from "./store";
 
 const router = createBrowserRouter([
   {
@@ -65,11 +70,13 @@ const router = createBrowserRouter([
     path: "/login",
     element: <Login />,
     errorElement: <Error />,
+    action: loginAction(store),
   },
   {
     path: "/register",
     element: <Register />,
     errorElement: <Error />,
+    action: registerAction,
   },
 ]);
 
