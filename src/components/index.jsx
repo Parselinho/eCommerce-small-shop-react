@@ -9,3 +9,6 @@ export { default as Loading } from "./Loading";
 export { default as FeaturedProducts } from "./products/FeaturedProducts";
 export { default as CartTotal } from "./CartTotal";
 export { default as CartItemsList } from "./CartItemsList";
+export { default as CheckOutForm } from "./CheckOutForm";
+export { default as OrdersList } from "./OrdersList";
+export { default as ComplexPagination } from "./ComplexPagination";
